@@ -48,7 +48,7 @@ build:
         code: |
           dotnet test
     - script:
-        name: copy binary
+        name: copy binary 2
         cwd: src/StatlerWaldorfCorp.TeamService
         code: |
           cp -r . $WERCKER_OUTPUT_DIR/app 
