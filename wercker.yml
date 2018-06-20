@@ -59,5 +59,5 @@ deploy:
         username: $USERNAME
         password: $PASSWORD
         repository: viiniciusjv/teamservice
-        registry: https://registry.hub.docker.com
+        registry: https://registry.hub.docker.com/v2
         entrypoint: "/pipeline/source/app/docker_entrypoint.sh"
