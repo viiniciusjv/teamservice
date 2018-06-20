@@ -3,7 +3,7 @@ no-response-timeout: 10
 build:
   steps: 
     - script:
-        name: restore
+        name: restore-base
         cwd: src/StatlerWaldorfCorp.TeamService
         code: |
           dotnet restore
