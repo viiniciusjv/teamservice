@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatlerWaldorfCorp.TeamService", "src\StatlerWaldorfCorp.TeamService\StatlerWaldorfCorp.TeamService.csproj", "{001FB211-8BDC-4476-AA79-502504321DDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatlerWaldorfCorp.TeamService.Tests", "test\StatlerWaldorfCorp.TeamService.Tests\StatlerWaldorfCorp.TeamService.Tests.csproj", "{7C2AF0BA-210B-4F5F-91E6-04614EDD0F7A}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{001FB211-8BDC-4476-AA79-502504321DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{001FB211-8BDC-4476-AA79-502504321DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{001FB211-8BDC-4476-AA79-502504321DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{001FB211-8BDC-4476-AA79-502504321DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C2AF0BA-210B-4F5F-91E6-04614EDD0F7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C2AF0BA-210B-4F5F-91E6-04614EDD0F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C2AF0BA-210B-4F5F-91E6-04614EDD0F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C2AF0BA-210B-4F5F-91E6-04614EDD0F7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
