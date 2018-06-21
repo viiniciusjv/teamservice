@@ -54,7 +54,7 @@ namespace StatlerWaldorfCorp.TeamService.Tests.Integration
             string raw = await getResponse.Content.ReadAsStringAsync();
             List<Team> teams = JsonConvert.DeserializeObject<List<Team>>(raw);
             Assert.Single(teams);
-            Assert.Equal("Zombie2", teams[0].Name);
+            Assert.Equal("Zombie", teams[0].Name);
             Assert.Equal(teamZombie.ID, teams[0].ID);           
         }
     }    
