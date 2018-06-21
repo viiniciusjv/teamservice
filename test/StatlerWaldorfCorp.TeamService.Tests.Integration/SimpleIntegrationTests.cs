@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Linq;
 using Newtonsoft.Json;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace StatlerWaldorfCorp.TeamService.Tests.Integration
 {
@@ -22,20 +23,21 @@ namespace StatlerWaldorfCorp.TeamService.Tests.Integration
 
         public SimpleIntegrationTests()
         {
-            testServer = new TestServer(new WebHostBuilder()
+           testServer = new TestServer(new WebHostBuilder()
                     .UseStartup<Startup>());
             testClient = testServer.CreateClient();
 
-            teamZombie = new Team() {
+            teamZombie = new Team()
+            {
                 ID = Guid.NewGuid(),
                 Name = "Zombie"
             };
         }
 
         [Fact]
-        public async void TestTeamPostAndGet()
+        public async Task TestTeamPostAndGet()
         {
-            StringContent stringContent = new StringContent(            
+            StringContent stringContent = new StringContent(
                 JsonConvert.SerializeObject(teamZombie),
                 UnicodeEncoding.UTF8,
                 "application/json");
@@ -49,11 +51,11 @@ namespace StatlerWaldorfCorp.TeamService.Tests.Integration
             var getResponse = await testClient.GetAsync("/teams");
             getResponse.EnsureSuccessStatusCode();
 
-            string raw = await getResponse.Content.ReadAsStringAsync();            
+            string raw = await getResponse.Content.ReadAsStringAsync();
             List<Team> teams = JsonConvert.DeserializeObject<List<Team>>(raw);
-            Assert.Equal(1, teams.Count());
-            Assert.Equal("Zombie", teams[0].Name);
-            Assert.Equal(teamZombie.ID, teams[0].ID);
+            Assert.Single(teams);
+            Assert.Equal("Zombie2", teams[0].Name);
+            Assert.Equal(teamZombie.ID, teams[0].ID);           
         }
     }    
 }
