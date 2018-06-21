@@ -45,8 +45,7 @@ namespace StatlerWaldorfCorp.TeamService
 
             var locationUrl = Configuration.GetSection("location:url").Value;
             logger.LogInformation("Using {0} for location service URL.", locationUrl);
-            services.AddSingleton<ILocationClient>(
-                new HttpLocationClient(locationUrl));
+            services.AddSingleton<ILocationClient>(new HttpLocationClient(locationUrl));
         }
 
         public void Configure(IApplicationBuilder app)
