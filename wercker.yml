@@ -42,6 +42,6 @@ deploy:
         username: $USERNAME
         password: $PASSWORD
         tag: location
-        repository: dotnetcoreservices/teamservice
-        registry: https://registry.hub.docker.com
+        repository: viiniciusjv/teamservice
+        registry: https://registry.hub.docker.com/v2
         entrypoint: "/pipeline/source/app/docker_entrypoint.sh"
