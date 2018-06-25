@@ -9,6 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatlerWaldorfCorp.TeamServ
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4BE475E3-321F-46EF-87D1-E4A2032C00EF}"
 	ProjectSection(SolutionItems) = preProject
+		src\StatlerWaldorfCorp.TeamService\docker_entrypoint.sh = src\StatlerWaldorfCorp.TeamService\docker_entrypoint.sh
 		wercker.yml = wercker.yml
 	EndProjectSection
 EndProject

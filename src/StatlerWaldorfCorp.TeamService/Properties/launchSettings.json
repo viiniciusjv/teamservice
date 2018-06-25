@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "StatlerWaldorfCorp.TeamService": {
+      "commandName": "Project",
+      "commandLineArgs": "dsaddsadsa",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:54849/"
+    }
+  }
+}
