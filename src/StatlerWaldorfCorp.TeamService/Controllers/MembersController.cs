@@ -39,26 +39,45 @@ namespace StatlerWaldorfCorp.TeamService
 		[Route("/teams/{teamId}/[controller]/{memberId}")]		
 		public async virtual Task<IActionResult> GetMember(Guid teamID, Guid memberId) 
 		{
-			Team team = repository.Get(teamID);
-			
-			if(team == null) {
-				return this.NotFound();
-			} else {
-				var q = team.Members.Where(m => m.ID == memberId);
+            try
+            {
+                Team team = repository.Get(teamID);
 
-				if(q.Count() < 1) {
-					return this.NotFound();
-				} else {
-					Member member = (Member)q.First();
+                if (team == null)
+                {
+                    return this.NotFound();
+                }
+                else
+                {
+                    var q = team.Members.Where(m => m.ID == memberId);
 
-					return this.Ok(new LocatedMember {
-						ID = member.ID,
-						FirstName = member.FirstName,
-						LastName = member.LastName,
-						LastLocation = await this.locationClient.GetLatestForMember(member.ID)
-					});
-				}
-			}
+                    if (q.Count() < 1)
+                    {
+                        return this.NotFound();
+                    }
+                    else
+                    {
+                        Member member = (Member)q.First();
+
+                        return this.Ok(new LocatedMember
+                        {
+                            ID = member.ID,
+                            FirstName = member.FirstName,
+                            LastName = member.LastName,
+                            LastLocation = await this.locationClient.GetLatestForMember(member.ID)
+                        });
+                    }
+                }
+            }
+            catch(Exception ex) {
+                string msg=string.Empty;
+                do
+                {
+                    msg += ex.Message;
+                    ex = ex.InnerException;
+                } while (ex != null);
+                return StatusCode(500,msg);
+            }
 		}
 
 		[HttpGet]
