@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "StatlerWaldorfCorp.TeamService": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_URLS": "http://*:8050"
+      }
+    }
+  }
+}
