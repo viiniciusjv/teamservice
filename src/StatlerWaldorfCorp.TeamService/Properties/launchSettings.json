@@ -4,7 +4,9 @@
       "commandName": "Project",
       "commandLineArgs": "dsaddsadsa",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:54849/"
+      "environmentVariables": {
+        "ASPNETCORE_URLS": "http://*:5121"
+      }
     }
   }
 }
